@@ -1,5 +1,6 @@
 package com.example.eschild.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,12 +23,19 @@ public class LoginTab extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.tab_activity_login, parent, false);
-
+        login = root.findViewById(R.id.submit);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), HomeActivity.class);
+                startActivity(intent);
+            }
+        });
         /*
         numero = root.findViewById(R.id.numero);
         pass = root.findViewById(R.id.password);
         forget = root.findViewById(R.id.forget);
-        login = root.findViewById(R.id.submit);
+
 
         numero.setTranslationX(800);
         pass.setTranslationX(800);
