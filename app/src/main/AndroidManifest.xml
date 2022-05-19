@@ -9,7 +9,9 @@
         android:roundIcon="@drawable/logos_transparent"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.HomeActivity"></activity>
+        <activity android:name=".view.VideoActivity"></activity>
+        <activity android:name=".view.TypeActivity" />
+        <activity android:name=".view.HomeActivity" />
         <activity android:name=".view.LoginActivity" />
         <activity android:name=".view.MainActivity">
             <intent-filter>
