@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 32
@@ -20,6 +21,7 @@ android {
     dataBinding {
         enabled = true
     }
+    useLibrary 'org.apache.http.legacy'
 }
 
 dependencies {
@@ -36,4 +38,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     implementation 'org.sufficientlysecure:html-textview:4.0'
+    implementation 'com.amitshekhar.android:android-networking:1.0.2'
+    implementation 'com.google.firebase:firebase-messaging:20.1.0'
 }

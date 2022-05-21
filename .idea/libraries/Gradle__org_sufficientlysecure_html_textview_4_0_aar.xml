@@ -1,8 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: org.sufficientlysecure:html-textview:4.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fa04536f66a3aa02d258e2510db7a44f/html-textview-4.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fa04536f66a3aa02d258e2510db7a44f/html-textview-4.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cc1cd6c28812688312cc8ea4f001b6c9/html-textview-4.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cc1cd6c28812688312cc8ea4f001b6c9/html-textview-4.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/cc1cd6c28812688312cc8ea4f001b6c9/html-textview-4.0/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.sufficientlysecure/html-textview/4.0/aaa090b8092f718d248febb38ba1a22d10baa1a0/html-textview-4.0-javadoc.jar!/" />

@@ -6,12 +6,15 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.eschild.R;
+import com.example.eschild.controller.LogoutController;
+import com.example.eschild.model.users.UserSession;
 
 public class HomeActivity extends AppCompatActivity {
     //Initialisation variable
@@ -32,7 +35,7 @@ public class HomeActivity extends AppCompatActivity {
         listeView = findViewById(R.id.listView);
 
         CategoryAdapter listAdapter = new CategoryAdapter(this,titre,desc);
-
+        initializeProfilPseudo();
         listeView.setAdapter(listAdapter);
 
         listeView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -49,6 +52,10 @@ public class HomeActivity extends AppCompatActivity {
         openDrawer(dr);
     }
 
+    public void Deconnecter(View view){
+        LogoutController.logout(HomeActivity.this);
+    }
+
     private static void openDrawer(DrawerLayout dr) {
         dr.openDrawer(GravityCompat.START);
     }
@@ -60,6 +67,17 @@ public class HomeActivity extends AppCompatActivity {
     private static void closeDrawer(DrawerLayout dr) {
         if(dr.isDrawerOpen(GravityCompat.START)){
             dr.closeDrawer(GravityCompat.START);
+        }
+    }
+
+    public void initializeProfilPseudo(){
+        TextView pseudo = findViewById(R.id.profilPseudo);
+        try {
+            UserSession user = UserSession.getSession(this);
+            pseudo.setText(user.getPseudo());
+        }
+        catch (Exception e){
+            Log.d("exception", "---------" + e.getMessage());
         }
     }
 }
