@@ -10,7 +10,7 @@
         android:layout_height="180dp"
         android:layout_margin="16dp"
         android:onClick="ClickLogo"
-        android:src="@drawable/logos_transparent" />
+        android:src="@drawable/educationlogostransparent" />
 
     <TextView
         android:layout_width="match_parent"
@@ -140,4 +140,5 @@
         android:layout_marginBottom="16dp"
         android:background="#636363"
         />
+    
 </LinearLayout>

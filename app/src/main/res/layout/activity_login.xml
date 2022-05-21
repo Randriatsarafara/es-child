@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:background="@color/bluec"
-        android:src="@drawable/logos_white"
+        android:src="@drawable/educationlogos_white"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent=".30"
@@ -24,7 +24,7 @@
         android:background="@drawable/vie_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent=".78"
+        app:layout_constraintHeight_percent=".70"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1">
@@ -35,7 +35,7 @@
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent=".7"
+            app:layout_constraintHeight_percent=".6"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0" />

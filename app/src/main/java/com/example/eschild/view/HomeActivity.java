@@ -17,8 +17,8 @@ public class HomeActivity extends AppCompatActivity {
     //Initialisation variable
     DrawerLayout dr;
     ListView listeView;
-    String titre[] = {"Cartoon","Alphabet","Number","Animal"};
-    String desc[] = {"1/12","2/6","3/3","1/10"};
+    String titre[] = {"Cartoon","Alphabet","Number","Animal","Cartoon","Alphabet","Number","Animal"};
+    String desc[] = {"1/12","2/6","3/3","1/10","1/12","2/6","3/3","1/10"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class HomeActivity extends AppCompatActivity {
         listeView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(HomeActivity.this, TypeActivity.class);
+                Intent intent = new Intent(HomeActivity.this, CourActivity.class);
                 startActivity(intent);
             }
         });

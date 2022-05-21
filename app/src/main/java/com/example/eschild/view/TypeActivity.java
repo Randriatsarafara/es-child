@@ -6,14 +6,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
+import android.widget.GridView;
 import android.widget.TextView;
 
 import com.example.eschild.R;
 
 public class TypeActivity extends AppCompatActivity {
 
+    GridView grid_list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +22,10 @@ public class TypeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_type_cour);
         TextView text = findViewById(R.id.title_lab);
         text.setText("Type of cour");
+        grid_list = findViewById(R.id.listGrid);
+
+        TypeAdapter listAdapter = new TypeAdapter(this);
+        grid_list.setAdapter(listAdapter);
     }
 
     public void ClickPhoto(View view){

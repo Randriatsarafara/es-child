@@ -4,13 +4,15 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/logos_transparent"
+        android:icon="@drawable/educationlogos"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/logos_transparent"
+        android:roundIcon="@drawable/educationlogos"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".view.VideoActivity"></activity>
+        <activity android:name=".view.DetailActivity" />
         <activity android:name=".view.TypeActivity" />
+        <activity android:name=".view.CourActivity" />
         <activity android:name=".view.HomeActivity" />
         <activity android:name=".view.LoginActivity" />
         <activity android:name=".view.MainActivity">
