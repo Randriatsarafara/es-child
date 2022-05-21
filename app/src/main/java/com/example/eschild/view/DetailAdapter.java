@@ -25,8 +25,8 @@ public class DetailAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position){
         switch (position){
             case 0:
-                LoginTab loginTab = new LoginTab();
-                return loginTab;
+                DetailTab tab = new DetailTab();
+                return tab;
             case 1:
                 VideoTab videoTab = new VideoTab();
                 return videoTab;

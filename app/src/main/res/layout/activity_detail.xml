@@ -8,18 +8,6 @@
         android:id="@+id/include_"
         layout="@layout/toolbar" />
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/view_pager_detail"
-        android:layout_width="409dp"
-        android:layout_height="672dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent=".7"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tab_layout_detail"
-        app:layout_constraintVertical_bias="0.0" />
-
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout_detail"
         android:layout_width="match_parent"
@@ -29,4 +17,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include_"
         app:layout_constraintVertical_bias="0" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tab_layout_detail"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
