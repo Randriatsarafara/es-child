@@ -2,6 +2,7 @@ package com.example.eschild.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.eschild.R;
 import com.example.eschild.model.users.UserSession;
+import com.example.eschild.utils.Helper;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.FirebaseMessaging;
@@ -32,11 +34,14 @@ public class MainActivity extends AppCompatActivity {
         notification();
         getWindow().setFlags(View.SYSTEM_UI_FLAG_FULLSCREEN,View.SYSTEM_UI_FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+        Helper.setTheme(this);
         image = findViewById(R.id.imageView);
         topAnimation = AnimationUtils.loadAnimation(this,R.anim.animation_top);
         image.setAnimation(topAnimation);
         //text.setText("Type du cour");
         //getSupportActionBar().hide();
+//        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

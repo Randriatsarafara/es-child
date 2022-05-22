@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.eschild">
+
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@drawable/educationlogos"
         android:label="@string/app_name"
         android:roundIcon="@drawable/educationlogos"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".view.PreferenceActivity"></activity>
+
         <service
             android:name=".services.NotificationService"
             android:exported="false">
@@ -17,7 +21,8 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-        <activity android:name=".view.VideoActivity"></activity>
+
+        <activity android:name=".view.VideoActivity" />
         <activity android:name=".view.DetailActivity" />
         <activity android:name=".view.TypeActivity" />
         <activity android:name=".view.CourActivity" />
@@ -30,7 +35,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <uses-library android:name="org.apache.http.legacy" android:required="false"></uses-library>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
     </application>
 
 </manifest>

@@ -9,8 +9,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.example.eschild.R;
 import com.example.eschild.controller.LogoutController;
@@ -27,7 +29,8 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        //getSupportActionBar().hide();
+
+//        ecoutePreference();
         TextView text = findViewById(R.id.title_lab);
         text.setText("Category");
         dr = findViewById(R.id.drawer_layout);
@@ -80,4 +83,23 @@ public class HomeActivity extends AppCompatActivity {
             Log.d("exception", "---------" + e.getMessage());
         }
     }
+
+    public void showPreference(View view){
+        Intent intent = new Intent(HomeActivity.this, PreferenceActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+//    public void ecoutePreference(){
+//        ImageView v = findViewById(R.id.setting);
+//        v.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(HomeActivity.this, PreferenceActivity.class);
+//                startActivity(intent);
+//                finish();
+//            }
+//        });
+//    }
+
 }
