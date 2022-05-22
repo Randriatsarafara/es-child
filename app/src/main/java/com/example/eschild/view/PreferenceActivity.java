@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -58,6 +59,10 @@ public class PreferenceActivity extends AppCompatActivity {
     }
 
     DrawerLayout dr;
+    public void ClickHome(View view){
+        Intent intent = new Intent(PreferenceActivity.this, HomeActivity.class);
+        startActivity(intent);
+    }
     public void ClickMenu(View view){
         openDrawer(dr);
     }

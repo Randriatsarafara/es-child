@@ -60,6 +60,11 @@ public class TypeActivity extends AppCompatActivity {
     }
 
     DrawerLayout dr;
+    public void ClickHome(View view){
+        Intent intent = new Intent(TypeActivity.this, HomeActivity.class);
+        startActivity(intent);
+    }
+
     public void ClickMenu(View view){
         openDrawer(dr);
     }

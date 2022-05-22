@@ -108,6 +108,10 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
+    public void ClickHome(View view){
+        Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
+        startActivity(intent);
+    }
 
     public void ClickMenu(View view){
         openDrawer(dr);

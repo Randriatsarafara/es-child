@@ -51,6 +51,10 @@ public class CourActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
     }
     DrawerLayout dr;
+    public void ClickHome(View view){
+        Intent intent = new Intent(CourActivity.this, HomeActivity.class);
+        startActivity(intent);
+    }
     public void ClickMenu(View view){
         openDrawer(dr);
     }

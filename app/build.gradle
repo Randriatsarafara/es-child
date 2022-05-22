@@ -6,7 +6,7 @@ android {
     buildToolsVersion "32.0.0"
     defaultConfig {
         applicationId "com.example.eschild"
-        minSdkVersion 17
+        minSdkVersion 30    
         targetSdkVersion 32
         versionCode 1
         versionName "1.0"
