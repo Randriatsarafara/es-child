@@ -16,12 +16,25 @@ import com.example.eschild.R;
 public class DetailTab extends Fragment {
 
     WebView webView ;
+    Cour c;
+
+    public DetailTab(Cour c){
+        this.c = c;
+    }
+    public Cour getC() {
+        return c;
+    }
+
+    public void setC(Cour c) {
+        this.c = c;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.tab_activity_detail, parent, false);
         webView = root.findViewById(R.id.web_view);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("http://www.google.com");
+        webView.loadUrl("https://es-child-backend.onrender.com/html/cours/"+c.getDescription());
 
         return root;
     }

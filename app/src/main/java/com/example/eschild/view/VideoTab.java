@@ -13,6 +13,12 @@ import com.example.eschild.R;
 
 public class VideoTab extends Fragment {
 
+    Cour c;
+
+    public VideoTab(Cour c){
+        this.c = c;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.tab_activity_video, parent, false);
@@ -20,10 +26,9 @@ public class VideoTab extends Fragment {
         RecyclerView recyclerView = root.findViewById(R.id.list_video);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        String [] temp = new String[0];
+        VideoAdapter adapter = new VideoAdapter(temp,new VideoActivity());
 
-        String [] c = new String[]{"2Y2vuuFderY","2Y2vuuFderY"};
-
-        VideoAdapter adapter = new VideoAdapter(c,new VideoActivity());
         recyclerView.setAdapter(adapter);
         return root;
     }

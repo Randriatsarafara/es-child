@@ -2,13 +2,19 @@ package com.example.eschild.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.example.eschild.R;
+import com.example.eschild.controller.LogoutController;
+import com.example.eschild.model.users.UserSession;
 import com.example.eschild.utils.Helper;
 
 public class PreferenceActivity extends AppCompatActivity {
@@ -20,7 +26,10 @@ public class PreferenceActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preference);
-
+        getSupportActionBar().hide();
+        TextView text = findViewById(R.id.title_lab);
+        text.setText("Preference");
+        dr = findViewById(R.id.drawer_layout);
         // initializing all our variables.
         radioGroup = findViewById(R.id.idRGgroup);
         themeTV = findViewById(R.id.idtvTheme);
@@ -46,5 +55,39 @@ public class PreferenceActivity extends AppCompatActivity {
             }
 
         });
+    }
+
+    DrawerLayout dr;
+    public void ClickMenu(View view){
+        openDrawer(dr);
+    }
+
+    public void Deconnecter(View view){
+        LogoutController.logout(PreferenceActivity.this);
+    }
+
+    private static void openDrawer(DrawerLayout dr) {
+        dr.openDrawer(GravityCompat.START);
+    }
+
+    public void ClickLogo(View view){
+        closeDrawer(dr);
+    }
+
+    private static void closeDrawer(DrawerLayout dr) {
+        if(dr.isDrawerOpen(GravityCompat.START)){
+            dr.closeDrawer(GravityCompat.START);
+        }
+    }
+
+    public void initializeProfilPseudo(){
+        TextView pseudo = findViewById(R.id.profilPseudo);
+        try {
+            UserSession user = UserSession.getSession(this);
+            pseudo.setText(user.getPseudo());
+        }
+        catch (Exception e){
+            Log.d("exception", "---------" + e.getMessage());
+        }
     }
 }

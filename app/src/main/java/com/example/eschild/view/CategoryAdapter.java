@@ -11,17 +11,26 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.eschild.R;
+import com.example.eschild.model.Categorie;
+
+import java.util.List;
 
 public class CategoryAdapter  extends ArrayAdapter<String> {
     Context context;
-    String title [];
-    String desc [];
+    List<Categorie> list;
 
-    public CategoryAdapter(Context context, String[] title, String[] desc) {
-        super(context, R.layout.activity_category,R.id.title_category,title);
+    public static String [] title(List<Categorie> list){
+        String[] res = new String[list.size()];
+        for(int i=0;i<list.size();i++){
+            res[i] = list.get(i).getNom();
+        }
+        return res;
+    }
+
+    public CategoryAdapter(Context context,List<Categorie> list) {
+        super(context, R.layout.activity_category,R.id.title_category,title(list));
         this.context = context;
-        this.title = title;
-        this.desc = desc;
+        this.list = list;
     }
 
     @NonNull
@@ -32,8 +41,9 @@ public class CategoryAdapter  extends ArrayAdapter<String> {
         TextView vtitle = view.findViewById(R.id.title_category);
         TextView vdesc = view.findViewById(R.id.desc_category);
 
-        vtitle.setText(title[position]);
-        vdesc.setText(desc[position]+" Completed");
+        String nom = list.get(position).getNom();
+        vtitle.setText(nom);
+        vdesc.setText(list.get(position).getCourVue()+"/"+list.get(position).getCourTotal()+" Completed");
 
         return view;
     }

@@ -5,6 +5,24 @@ public class Categorie {
     private String id;
     private String nom;
     private String image;
+    private int courTotal;
+    private int courVue;
+
+    public int getCourTotal() {
+        return courTotal;
+    }
+
+    public void setCourTotal(int courTotal) {
+        this.courTotal = courTotal;
+    }
+
+    public int getCourVue() {
+        return courVue;
+    }
+
+    public void setCourVue(int courVue) {
+        this.courVue = courVue;
+    }
 
     public String getId() {
         return id;
@@ -34,5 +52,13 @@ public class Categorie {
         this.id = id;
         this.nom = nom;
         this.image = image;
+    }
+
+    public Categorie(String id, String nom, String image, int courTotal, int courVue) {
+        this.id = id;
+        this.nom = nom;
+        this.image = image;
+        this.courTotal = courTotal;
+        this.courVue = courVue;
     }
 }

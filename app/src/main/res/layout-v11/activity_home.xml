@@ -20,7 +20,7 @@
                 android:iconifiedByDefault="false"
                 android:queryBackground="@android:color/transparent"
                 android:background="@drawable/search_background"
-                android:queryHint="Entry category name"
+                android:queryHint="Search category by name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
             <ListView

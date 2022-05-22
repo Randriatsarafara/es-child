@@ -49,9 +49,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
                 <TextView
-                    android:id="@+id/cour_date"
+                    android:id="@+id/cour_vu"
                     android:textSize="10dp"
-                    android:text="12/02/2022"
+                    android:text="Non lu"
                     android:layout_margin="10dp"
                     android:layout_width="match_parent"
                     android:gravity="right"
