@@ -24,7 +24,7 @@
              android:layout_height="wrap_content"
              android:padding="5dp"
              android:text="Alphabet"
-             android:textColor="#000"
+             android:textColor="@color/navFont"
              android:textSize="20sp"
              android:textStyle="bold" />
 
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:text="0/0 Completed"
-            android:textColor="@color/black"
+            android:textColor="#a9a9a9"
             android:textSize="15sp"
             android:textStyle="bold" />
     </LinearLayout>
