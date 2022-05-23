@@ -58,7 +58,6 @@ public class VideoAdapter extends  RecyclerView.Adapter<VideoAdapter.ViewHolder>
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         YouTubePlayerView video;
-
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             video = itemView.findViewById(R.id.youtube_player_view);

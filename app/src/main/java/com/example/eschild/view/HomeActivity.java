@@ -63,37 +63,37 @@ public class HomeActivity extends AppCompatActivity {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener(){
-
+        final List<Categorie>[] temp = new List[]{list};
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                List<Categorie> temp = new ArrayList<>();
-                if(query.compareToIgnoreCase("")==0){
-                    listAdapter = new CategoryAdapter(getApplicationContext(),list);
+                temp[0] = new ArrayList<>();
+                if (query.compareToIgnoreCase("") == 0) {
+                    listAdapter = new CategoryAdapter(getApplicationContext(), list);
                     listeView.setAdapter(listAdapter);
                     return true;
                 }
-                for(int i = 0; i<list.size(); i++){
-                    if(list.get(i).getNom().contains(query)){
-                        temp.add(list.get(i));
+                for (int i = 0; i < list.size(); i++) {
+                    if (list.get(i).getNom().toLowerCase().contains(query.toLowerCase())) {
+                        temp[0].add(list.get(i));
                     }
                 }
-                listAdapter = new CategoryAdapter(getApplicationContext(),temp);
+                listAdapter = new CategoryAdapter(getApplicationContext(), temp[0]);
                 listeView.setAdapter(listAdapter);
                 return true;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                //Toast.makeText(HomeActivity.this, newText, Toast.LENGTH_SHORT).show();
-                if(newText.compareToIgnoreCase("")==0){
-                    listAdapter = new CategoryAdapter(getApplicationContext(),list);
+//­Toast.makeText(HomeAc­tivity.this, newText, Toast.LENGTH_SHORT).­show();
+                if (newText.compareToIgnoreCase("") == 0) {
+                    listAdapter = new CategoryAdapter(getApplicationContext(), list);
                     listeView.setAdapter(listAdapter);
                 }
                 return true;
             }
         });
-        listAdapter = new CategoryAdapter(this,list);
+        listAdapter = new CategoryAdapter(this, temp[0]);
         listeView.setAdapter(listAdapter);
         initializeProfilPseudo();
 
@@ -102,8 +102,9 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(HomeActivity.this, CourActivity.class);
-                intent.putExtra(HomeActivity.EXTRA_MESSAGE, list.get(i).getId());
+                intent.putExtra(HomeActivity.EXTRA_MESSAGE, temp[0].get(i).getId());
                 startActivity(intent);
+                finish();
             }
         });
     }
