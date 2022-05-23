@@ -16,8 +16,6 @@ public class LoginActivity extends AppCompatActivity {
 
     TabLayout tabLayout;
     ViewPager viewPager;
-    FloatingActionButton news;
-    int v = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("Sign in"));
         tabLayout.addTab(tabLayout.newTab().setText("Sign up"));
         tabLayout.setSelectedTabIndicatorColor(Color.parseColor("#5757E9"));
-        //tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         final LoginAdapter adapter = new LoginAdapter(getSupportFragmentManager(),this,tabLayout.getTabCount());
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
@@ -52,45 +50,21 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-        //
-        /*tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                new TabLayout.TabLayoutOnPageChangeListener(tabLayout);
-                viewPager.setCurrentItem(tab.getPosition());
-                //viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
-                //viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
-
-        tabLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(LoginActivity.this,"ANDRANA",Toast.LENGTH_SHORT);
-                new TabLayout.TabLayoutOnPageChangeListener(tabLayout);
-            }
-        });
-
-        news.setTranslationY(300);
-        news.setAlpha(v);
-        news.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(400).start();
-
-        tabLayout.setTranslationY(300);
-        tabLayout.setAlpha(v);
-        tabLayout.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(100).start();
-
-         */
     }
+    @Override
+    protected void onPause(){
+        super.onPause();
 
+    }
+    @Override
+    protected void onResume(){
+        super.onResume();
+
+    }
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+
+    }
 
 }

@@ -6,30 +6,54 @@ public class Cour {
     private String description;
     private String image;
     private boolean vue;
+    private String sousTitre;
     private String [] video;
 
-    public Cour(String id, String title, String description, String image, boolean vue) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.image = image;
-        this.vue = vue;
+    public String getSousTitre() {
+        return sousTitre;
     }
-    public Cour(String id, String title, String description, String image, boolean vue,String [] video) {
+
+    public void setSousTitre(String sousTitre) {
+        this.sousTitre = sousTitre;
+    }
+
+    public Cour(String id, String title, String description, String image, boolean vue, String sousTitre) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.image = image;
         this.vue = vue;
+        this.sousTitre = sousTitre;
+    }
+
+    public Cour(String id, String title, String description, String image, boolean vue, String sousTitre,String [] video) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.image = image;
+        this.vue = vue;
+        this.sousTitre = sousTitre;
         this.video = video;
     }
 
-    public Cour(String id, String title, String description, String image) {
+    public Cour(String id, String title, String description, String image,String sousTitre,String [] video) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.image = image;
+        this.sousTitre = sousTitre;
+        this.video = video;
     }
+
+    public Cour(String id, String title, String description, String image,String sousTitre,boolean vue) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.image = image;
+        this.sousTitre = sousTitre;
+        this.vue = vue;
+    }
+
 
     public String[] getVideo() {
         return video;

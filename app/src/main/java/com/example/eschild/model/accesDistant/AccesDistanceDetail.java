@@ -51,8 +51,12 @@ public class AccesDistanceDetail extends AsyncTask<Void, Void, Cour> {
             String a = jsonObject.getString("data");
             JSONObject m = new JSONObject(a);
             String video = m.get("videos").toString();
-            JSONArray array = new JSONArray(video);
-            Cour cat = new Cour(m.get("_id").toString(),m.get("titre").toString(),m.get("description").toString(),m.get("image").toString());
+            JSONArray arr = new JSONArray(video);
+            String [] temp = new String[arr.length()];
+            for(int i = 0; i < arr.length(); i++){
+                temp[i] = arr.get(i).toString();
+            }
+            Cour cat = new Cour(m.get("_id").toString(),m.get("titre").toString(),m.get("description").toString(),m.get("image").toString(),m.get("sousTitre").toString(),temp);
             return cat;
         } catch (IOException e) {
             e.printStackTrace();

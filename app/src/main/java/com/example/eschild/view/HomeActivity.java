@@ -152,6 +152,22 @@ public class HomeActivity extends AppCompatActivity {
         finish();
     }
 
+    @Override
+    protected void onPause(){
+        super.onPause();
+
+    }
+    @Override
+    protected void onResume(){
+        super.onResume();
+
+    }
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+
+    }
+
 //    public void ecoutePreference(){
 //        ImageView v = findViewById(R.id.setting);
 //        v.setOnClickListener(new View.OnClickListener() {

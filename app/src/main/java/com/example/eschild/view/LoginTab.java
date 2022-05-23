@@ -1,7 +1,9 @@
 package com.example.eschild.view;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,45 +22,29 @@ public class LoginTab extends Fragment {
     EditText numero,pass;
     TextView forget;
     Button login;
-    int v = 0;
     private LoginController controle;
+    private ProgressDialog progressDialog;
 
+    public ProgressDialog getProgressDialog() {
+        return progressDialog;
+    }
+
+    public void setProgressDialog(ProgressDialog progressDialog) {
+        this.progressDialog = progressDialog;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        this.getProgressDialog().dismiss();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
+        this.progressDialog = new ProgressDialog(getActivity());
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.tab_activity_login, parent, false);
-//        login = root.findViewById(R.id.submit);
-//        login.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(getActivity(), HomeActivity.class);
-//                startActivity(intent);
-//            }
-//        });
         init(root);
         ecouteLogin();
-        /*
-        numero = root.findViewById(R.id.numero);
-        pass = root.findViewById(R.id.password);
-        forget = root.findViewById(R.id.forget);
-
-
-        numero.setTranslationX(800);
-        pass.setTranslationX(800);
-        forget.setTranslationX(800);
-        login.setTranslationX(800);
-
-        numero.setAlpha(v);
-        pass.setAlpha(v);
-        forget.setAlpha(v);
-        login.setAlpha(v);
-
-        numero.animate().translationY(0).alpha(1).setDuration(800).setStartDelay(300).start();
-        pass.animate().translationY(0).alpha(1).setDuration(800).setStartDelay(500).start();
-        forget.animate().translationY(0).alpha(1).setDuration(800).setStartDelay(500).start();
-        login.animate().translationY(0).alpha(1).setDuration(800).setStartDelay(700).start();
-        */
-
         return root;
     }
 
@@ -66,6 +52,7 @@ public class LoginTab extends Fragment {
         controle = LoginController.getInstance();
         numero = root.findViewById(R.id.numero);
         pass = root.findViewById(R.id.password);
+        pass.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
         forget = root.findViewById(R.id.forget);
         login = root.findViewById(R.id.submit);
     }
@@ -78,11 +65,16 @@ public class LoginTab extends Fragment {
 //                startActivity(intent);
                 String num = numero.getText().toString();
                 String mdp = pass.getText().toString();
-                Toast.makeText(getActivity(), "Chargement...", Toast.LENGTH_LONG).show();
-                if(mdp.length() == 0 || num.length() == 0)
+                progressDialog.setMessage("Loading...");
+                progressDialog.setCancelable(false);
+                progressDialog.show();
+                //Toast.makeText(getActivity(), "Chargement...", Toast.LENGTH_LONG).show();
+                if(mdp.length() == 0 || num.length() == 0){
                     Toast.makeText(getActivity(), "Veuillez renseigner tous les champs", Toast.LENGTH_SHORT).show();
-                else
+                }
+                else{
                     controle.login(num, mdp, getActivity());
+                }
             }
         });
     }

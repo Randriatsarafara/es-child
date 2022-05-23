@@ -26,9 +26,8 @@ public class VideoTab extends Fragment {
         RecyclerView recyclerView = root.findViewById(R.id.list_video);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        String [] temp = new String[0];
-        VideoAdapter adapter = new VideoAdapter(temp,new VideoActivity());
-
+        String [] te = c.getVideo();
+        VideoAdapter adapter = new VideoAdapter(te,new VideoActivity());
         recyclerView.setAdapter(adapter);
         return root;
     }

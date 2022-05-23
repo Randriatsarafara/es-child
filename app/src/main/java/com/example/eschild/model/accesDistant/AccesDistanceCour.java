@@ -52,7 +52,7 @@ public class AccesDistanceCour extends AsyncTask<Void, Void, List> {
             JSONArray array = new JSONArray(a);
             for(int i = 0; i < array.length(); i++){
                 JSONObject m = (JSONObject) array.get(i);
-                Cour cat = new Cour(m.get("_id").toString(),m.get("titre").toString(),m.get("description").toString(),m.get("image").toString());
+                Cour cat = new Cour(m.get("_id").toString(),m.get("titre").toString(),m.get("_id").toString(),m.get("image").toString(),m.get("sousTitre").toString(),Boolean.parseBoolean(m.get("vue").toString()));
                 list_cour.add(i,cat);
             }
         } catch (IOException e) {

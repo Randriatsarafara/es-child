@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,8 @@ import androidx.annotation.Nullable;
 
 import com.example.eschild.R;
 import com.example.eschild.model.Categorie;
+import com.example.eschild.utils.DownLoadImageTask;
+import com.example.eschild.utils.Helper;
 
 import java.util.List;
 
@@ -40,10 +43,12 @@ public class CategoryAdapter  extends ArrayAdapter<String> {
         View view = layoutInflater.inflate(R.layout.activity_category,parent,false);
         TextView vtitle = view.findViewById(R.id.title_category);
         TextView vdesc = view.findViewById(R.id.desc_category);
-
+        ImageView vimage = view.findViewById(R.id.image_category);
+        String [] image = {Helper.URL+"images/categories/"+list.get(position).getImage()};
+        new DownLoadImageTask(vimage).execute(image);
         String nom = list.get(position).getNom();
         vtitle.setText(nom);
-        vdesc.setText(list.get(position).getCourVue()+"/"+list.get(position).getCourTotal()+" Completed");
+        vdesc.setText(list.get(position).getCourVue()+"/"+list.get(position).getCourTotal()+" Completed ");
 
         return view;
     }

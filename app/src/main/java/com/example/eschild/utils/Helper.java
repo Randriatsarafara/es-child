@@ -17,6 +17,7 @@ public class Helper {
     }
 
 //    public static final String API_URL = "http://192.168.43.131:8080/api/";
+    public static final String URL = "https://es-child-backend.onrender.com/";
     public static final String API_URL = "https://es-child-backend.onrender.com/api/";
 
     public static void setTheme(Activity activity){
