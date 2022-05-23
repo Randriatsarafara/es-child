@@ -152,6 +152,12 @@ public class HomeActivity extends AppCompatActivity {
         finish();
     }
 
+    public void ClickAbout(View view){
+        Intent intent = new Intent(HomeActivity.this, AboutActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     @Override
     protected void onPause(){
         super.onPause();
@@ -165,7 +171,6 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onDestroy(){
         super.onDestroy();
-
     }
 
 //    public void ecoutePreference(){

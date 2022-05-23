@@ -15,7 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".view.PreferenceActivity"></activity>
+        <activity android:name=".view.AboutActivity"></activity>
+        <activity android:name=".view.PreferenceActivity" />
 
         <service
             android:name=".services.NotificationService"

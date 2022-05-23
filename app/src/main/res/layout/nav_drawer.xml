@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/navColor">
 
     <ImageView
         android:layout_width="match_parent"
@@ -19,7 +20,7 @@
         android:gravity="center|center_horizontal"
         android:text="Madalitso"
         android:textAlignment="center"
-        android:textColor="#636363"
+        android:textColor="@color/navFont"
         android:textSize="28sp"
         android:textStyle="bold" />
     <View
@@ -27,7 +28,7 @@
         android:layout_height="1dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:background="#636363"
+        android:background="@color/navFont"
         />
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,6 +43,7 @@
             android:text="Home"
             android:textSize="18dp"
             android:padding="12dp"
+            android:textColor="@color/navFont"
             android:layout_marginLeft="16dp" />
         <ImageView
             android:layout_width="wrap_content"
@@ -55,22 +57,26 @@
         android:layout_height="1dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:background="#636363"
+        android:background="@color/navFont"
         />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:onClick="ClickHome">
+        android:onClick="ClickAbout"
+        android:orientation="horizontal">
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
             android:layout_weight="1"
-            android:text="About"
-            android:textSize="18dp"
             android:padding="12dp"
-            android:layout_marginLeft="16dp" />
+            android:text="About"
+            android:textColor="@color/navFont"
+            android:textSize="18dp" />
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -83,22 +89,26 @@
         android:layout_height="1dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:background="#636363"
+        android:background="@color/navFont"
         />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:onClick="ClickHome">
+        android:onClick="showPreference"
+        android:orientation="horizontal">
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
             android:layout_weight="1"
-            android:text="Setting"
-            android:textSize="18dp"
             android:padding="12dp"
-            android:layout_marginLeft="16dp" />
+            android:text="Setting"
+            android:textColor="@color/navFont"
+            android:textSize="18dp" />
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -111,7 +121,7 @@
         android:layout_height="1dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:background="#636363"
+        android:background="@color/navFont"
         />
     <LinearLayout
         android:layout_width="match_parent"
@@ -126,6 +136,7 @@
             android:text="Logout"
             android:textSize="18dp"
             android:padding="12dp"
+            android:textColor="@color/navFont"
             android:layout_marginLeft="16dp" />
         <ImageView
             android:layout_width="wrap_content"
@@ -139,7 +150,7 @@
         android:layout_height="1dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
-        android:background="#636363"
+        android:background="@color/navFont"
         />
     
 </LinearLayout>
