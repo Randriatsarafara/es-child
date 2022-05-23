@@ -47,7 +47,7 @@ public class HomeActivity extends AppCompatActivity {
 //        ecoutePreference();
 
         TextView text = findViewById(R.id.title_lab);
-        text.setText("List of category");
+        text.setText("List of categories");
         dr = findViewById(R.id.drawer_layout);
         searchView = findViewById(R.id.search);
         listeView = findViewById(R.id.listView);

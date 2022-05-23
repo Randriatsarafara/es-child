@@ -28,7 +28,7 @@ public class TypeActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         dr = findViewById(R.id.drawer_layout);
         TextView text = findViewById(R.id.title_lab);
-        text.setText("Type of cour");
+        text.setText("Type of course");
         grid_list = findViewById(R.id.listGrid);
 
         TypeAdapter listAdapter = new TypeAdapter(this);

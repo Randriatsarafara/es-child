@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                     if (!task.isSuccessful()) {
                         msg = "Subscription failed";
                     }
-                    Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(MainActivity.this, msg, Toast.LENGTH_SHORT).show();
                 }
             });
     }

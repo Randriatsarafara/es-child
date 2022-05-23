@@ -34,7 +34,7 @@ public class DetailActivity  extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
         getSupportActionBar().hide();
         TextView text = findViewById(R.id.title_lab);
-        text.setText("Detail of cour");
+        text.setText("Detail of course");
         dr = findViewById(R.id.drawer_layout);
         tabLayout = findViewById(R.id.tab_layout_detail);
         viewPager = findViewById(R.id.view_pager_detail);

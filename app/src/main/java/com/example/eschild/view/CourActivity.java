@@ -29,7 +29,7 @@ public class CourActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_cours);
         TextView text = findViewById(R.id.title_lab);
-        text.setText("List of cour");
+        text.setText("List of courses");
         dr = findViewById(R.id.drawer_layout);
         RecyclerView recyclerView = findViewById(R.id.list_cour);
         recyclerView.setHasFixedSize(true);
